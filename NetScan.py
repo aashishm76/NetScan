@@ -58,9 +58,9 @@ def deviceInfo():
     try:
         userHostName = socket.gethostname()
         userIP = socket.gethostbyname(userHostName)
+        print "\n" + '-' * 3 + 'Device Information' + '-' * 3
         print "Host: ", userHostName
-        print "Host IP: ", userIP
-        print " "
+        print "Host IP: ", userIP, '\n'
         menu()
     except socket.error:
         print 'Unable to resolve hostname'
