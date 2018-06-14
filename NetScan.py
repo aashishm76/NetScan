@@ -5,8 +5,8 @@
 import socket
 import os
 
-print "NetSCAN 1.0 \n"
-
+# Program Name Display
+print '\n' + "NetScan 1.0" + '\n'
 
 # Main
 def main():
@@ -42,11 +42,12 @@ def menu():
 # Helper request user for address entry
 def addressgetter():
 
-    addressIP = raw_input('Enter an web address: ')
+    addressIP = raw_input('\nEnter an web address: ')
     return addressIP
 
 # Helper to process device info
 def deviceInfoHelper():
+
 
     userHostName = socket.gethostname()
     userIP = socket.gethostbyname(userHostName)
@@ -55,6 +56,7 @@ def deviceInfoHelper():
 
 # Provides device information
 def deviceInfo():
+
     try:
         userHostName = socket.gethostname()
         userIP = socket.gethostbyname(userHostName)
@@ -113,11 +115,11 @@ def currNetwork():
 
     # Get address of current device to determine what IP Address range to use
     addressIP = deviceInfoHelper()
-    print('Your Device IP: ' + addressIP)
+    print 'Your Device IP: ' + addressIP
 
     # Splice the IP Address to obtain proper range
     baseIPAddress = addressIP[:11]
-    print('Base IP Address is: ' + baseIPAddress)
+    print 'Base IP Address is: ' + baseIPAddress
 
     # Iterate through possible IP address and ping them
     for i in range (1, 200):
